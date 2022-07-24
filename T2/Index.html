@@ -1,0 +1,264 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <title> New add dateset    </title>
+    
+</head>
+<script>
+    function ddlselect() {
+        var d = document.getElementById("ddselect");
+        var displaytext = d.options[d.selectedIndex].text;
+        document.getElementById("txtvalue").value = displaytext;
+    }
+</script>
+<body>
+    <div class="text-center">
+        <div id="addnewTest">
+
+            <div class="side-app ">
+                <div class="pageheader">
+
+                    <div>
+                        <a class="" href="#">
+                            <img src="css\img\logo.jpg" alt="user-img" class="avatar avatar-lg brround mCS_img_loaded">
+
+                        </a>
+                    </div>
+                    <div class="user-info">
+
+                        <h2><input class="input01" value="" readonly hidden /></h2>
+                        <h2></h2>
+                        <span></span>
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <ul class="slide-menu">
+               
+                <li>
+                    <a class="info" href="#">لوحة المعلومات</a>
+                </li>
+            </ul>
+
+            <ul class="slide">
+              
+                    <li class="side-menu__icon fe fe-layout fa-2x"></li>
+                    
+
+            </ul>
+            
+
+        </div>
+    </div>
+    
+   
+    <div class="card overflow-hidden">
+        <div class="card-body form">
+
+            <div class="container-fluid">
+                <div class="">
+                    <h3 class="header"> بيانات العقد</h3>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+
+                                <table class="ta01" id="ta101">
+
+
+                                    <label class="labl01">اسم البلدية</label>
+
+
+                                    <select id="ddselect" onchange="ddlselect();">
+                                        <option>Tabuk-1</option>
+                                        <option>Tabuk-2</option>
+                                        <option>Tabuk-3</option>
+                                    </select>
+                                    <input type="text" id="txtvalue" readonly />
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-all">
+                                <div class="form-label02">نوع العقد</div>
+                                <div class="div04">
+                                    <label class="labl03">
+                                        <input type="radio" class="chLable" name="contract01" value="1">
+                                        <span class="custom-control-label">عقد تأجير </span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">اسم المشروع</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractProjectName" maxlength="100" value="" placeholder="اسم المشروع" />
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">تاريخ بداية العقد</label>
+                                <div class="input-icon">
+                                    <input type="date" class="form-control validate[required,custom[date],future[1900-12-31],past[now]]" autocomplete="on" id="txtContractDate" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">مدة العقد (بالاشهر)</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractPeriod" value="" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">تاريخ نهاية العقد</label>
+                                <div class="input-icon">
+                                    <input type="text" class="form-control" disabled autocomplete="off" id="txtContractEndDate" value="" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">المدة بالاشهر</label>
+                                <input type="number" class="form-control ValiLengthOne" autocomplete="off" id="txtContractFreePeriod" value="" maxlength="2" />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <br />
+                    <h3 class="headerH3">بيانات المستثمر</h3>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group ">
+                                <div class="form-label displayLabelBlock">نوع المستثمر</div>
+                                <div class="custom-controls-stacked">
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input validate[required]" name="investorTp" id="radInvestPerson" value="1">
+                                        <span class="custom-control-label">فرد</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input validate[required]" name="investorTp" id="radInvestFirm" value="3">
+                                        <span class="custom-control-label">شركة</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input validate[required]" name="investorTp" id="radInvestFirm" value="4">
+                                        <span class="custom-control-label">مؤسسة</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">رقم المستثمر</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtInvestorNo" value="" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtInvestorNo" value="" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                                <input type="hidden" id="txtInvestorId" name="txtInvestorId" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">اسم المستثمر</label>
+                                <input type="text" class="form-control" autocomplete="off" id="txtInvestorName" value="" disabled="disabled" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">القيمة الايجارية للعقد المؤقت</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractValue" value="" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">نشاط العقد الرئيسى</label>
+                                <select id="ddlMainContractActivity" class="form-control ValiLengthOne  validate[required]">
+                                    <option value="">اختر</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <br />
+                    <h3 class="headerH3">بيانات الايجار</h3>
+                    <div class="row">
+                        <div class="aja">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">مبلغ الايجار</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractLocation" value="" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">مدة الايجار</label>
+                                <input type="text" class="form-control ValiLengthOne " autocomplete="off" id="txtContractParcelNo" value="" maxlength="10" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="displayLabelBlock">النوع</label>
+                                <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractParcelArea" value="" />
+                            </div>
+                            <h3 class="headerH3">البيانات المكانية</h3>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="displayLabelBlock">الموقع</label>
+                                        <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractLocation" value="" maxlength="200" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="displayLabelBlock">رقم القطعه</label>
+                                        <input type="text" class="form-control ValiLengthOne " autocomplete="off" id="txtContractParcelNo" value="" maxlength="20" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="displayLabelBlock">المساحة /م2</label>
+                                        <input type="text" class="form-control ValiLengthOne  validate[required]" autocomplete="off" id="txtContractParcelArea" value="" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div style="text-align:center">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body> 
